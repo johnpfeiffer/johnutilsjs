@@ -1,0 +1,38 @@
+{
+  "name": "johnutilsjs",
+  "version": "1.0.0",
+  "description": "JavaScript utility functions for common tasks",
+  "main": "src/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./urlParser": "./src/urlParser.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "utilities",
+    "helpers",
+    "url-parser",
+    "javascript",
+    "esm"
+  ],
+  "author": "John Pfeiffer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/johnutilsjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/johnutilsjs/issues"
+  },
+  "homepage": "https://github.com/yourusername/johnutilsjs#readme",
+  "devDependencies": {
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
