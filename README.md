@@ -101,3 +101,13 @@ npm test
 ## License
 
 MIT
+
+
+## Publish
+
+```bash
+npm publish
+```
+
+Publishing to https://registry.npmjs.org/
+
