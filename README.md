@@ -8,13 +8,6 @@ JavaScript utility functions for common tasks
 npm install johnutilsjs
 ```
 
-## Features
-
-- Pure ES modules (ESM)
-- Tree-shakeable exports
-- Comprehensive test coverage
-- Zero dependencies
-
 ## Usage
 
 ### Import the entire library
@@ -103,12 +96,6 @@ detectPrefix('/home', ['home'], validRoutes);
 
 ```bash
 npm test
-```
-
-### Run tests in watch mode
-
-```bash
-npm run test:watch
 ```
 
 ## License
