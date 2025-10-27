@@ -106,6 +106,7 @@ MIT
 ## Publish
 
 ```bash
+npm version patch  # 1.0.0 -> 1.0.1
 npm publish
 ```
 
