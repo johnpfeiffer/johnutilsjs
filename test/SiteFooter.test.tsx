@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { SiteFooter } from '../src/react';
+import { SiteFooter } from '../src/ui';
 
 describe('SiteFooter', () => {
   it.each([

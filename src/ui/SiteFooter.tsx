@@ -22,7 +22,7 @@ const iconLinkSx = { display: 'inline-flex', verticalAlign: 'text-bottom' } as c
 /** Shared app footer: optional app content, then "Built by" with LinkedIn and GitHub links. */
 export function SiteFooter({ repo, children }: SiteFooterProps) {
   return (
-    <Container component="footer" maxWidth={false} sx={{ width: '90%', mx: 'auto', py: 3 }}>
+    <Container component="footer" maxWidth="sm" sx={{ textAlign: 'center', py: 4 }}>
       {children}
       <Typography variant="body2">
         Built by {AUTHOR}{' '}

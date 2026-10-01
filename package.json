@@ -14,9 +14,9 @@
       "types": "./dist/urlParser.d.ts",
       "import": "./dist/urlParser.js"
     },
-    "./react": {
-      "types": "./dist/react/index.d.ts",
-      "import": "./dist/react/index.js"
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "import": "./dist/ui/index.js"
     }
   },
   "files": [
@@ -67,18 +67,18 @@
     }
   },
   "devDependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
     "@mui/icons-material": "9.4.0",
     "@mui/material": "9.4.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@types/react": "^19.2.0",
+    "@types/react": "19.2.18",
     "jsdom": "^29.1.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "typescript": "~5.9.3",
-    "vitest": "^4.1.10"
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
   },
   "engines": {
     "node": ">=18.0.0"

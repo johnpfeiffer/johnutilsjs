@@ -22,14 +22,14 @@ import { parseUrl, detectPrefix } from 'johnutilsjs';
 import { parseUrl } from 'johnutilsjs/urlParser';
 ```
 
-### Import React components
+### Import UI components
 
-React components live in a separate entry point, so the root import stays
+UI components live in a separate entry point, so the root import stays
 framework-free. They need the app to provide `react` (>=19), `@mui/material`
 (>=9), and `@mui/icons-material` (>=9) as peer dependencies.
 
 ```tsx
-import { SiteFooter } from 'johnutilsjs/react';
+import { SiteFooter } from 'johnutilsjs/ui';
 ```
 
 ## API
@@ -113,7 +113,7 @@ icon links.
 **Example:**
 
 ```tsx
-import { SiteFooter } from 'johnutilsjs/react';
+import { SiteFooter } from 'johnutilsjs/ui';
 
 export default function Footer() {
   return <SiteFooter repo="converter" />;
