@@ -1,6 +1,6 @@
 # johnutilsjs
 
-JavaScript utility functions for common tasks
+TypeScript utility functions and shared React components for common tasks
 
 ## Installation
 
@@ -20,6 +20,16 @@ import { parseUrl, detectPrefix } from 'johnutilsjs';
 
 ```javascript
 import { parseUrl } from 'johnutilsjs/urlParser';
+```
+
+### Import React components
+
+React components live in a separate entry point, so the root import stays
+framework-free. They need the app to provide `react` (>=19), `@mui/material`
+(>=9), and `@mui/icons-material` (>=9) as peer dependencies.
+
+```tsx
+import { SiteFooter } from 'johnutilsjs/react';
 ```
 
 ## API
@@ -90,13 +100,42 @@ detectPrefix('/home', ['home'], validRoutes);
 // ''
 ```
 
+### SiteFooter
+
+`<SiteFooter repo children? />` renders the shared app footer: optional
+app-specific content, then "Built by John Pfeiffer" with LinkedIn and GitHub
+icon links.
+
+**Props:**
+- `repo` (string): GitHub repository name under `johnpfeiffer`, e.g. `'converter'`
+- `children` (ReactNode, optional): app-specific content shown above the author line, e.g. data-source credits
+
+**Example:**
+
+```tsx
+import { SiteFooter } from 'johnutilsjs/react';
+
+export default function Footer() {
+  return <SiteFooter repo="converter" />;
+}
+
+// With app-specific credits
+<SiteFooter repo="benchmarks">
+  <Typography variant="body2">Data sources: ...</Typography>
+</SiteFooter>
+```
+
+The constants `AUTHOR`, `LINKEDIN_URL`, and `githubRepoUrl(repo)` are exported too.
+
 ## Development
 
-### Run tests
-
 ```bash
-npm test
+npm install
+npm test        # typecheck + vitest
+npm run build   # compile src/ to dist/ (JS + .d.ts)
 ```
+
+Sources are TypeScript in `src/`; only the compiled `dist/` is published.
 
 ## License
 
@@ -107,7 +146,7 @@ MIT
 
 ```bash
 npm version patch  # 1.0.0 -> 1.0.1
-npm publish
+npm publish        # prepublishOnly runs the tests and the build
 ```
 
 Publishing to https://registry.npmjs.org/

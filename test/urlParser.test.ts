@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseUrl, detectPrefix } from '../src/urlParser.js';
+import { parseUrl, detectPrefix } from '../src/urlParser';
 
 describe('urlParser', () => {
   const VALID_ROUTES = ['left', 'right'];
