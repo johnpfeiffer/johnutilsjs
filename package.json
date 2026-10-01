@@ -1,38 +1,86 @@
 {
   "name": "johnutilsjs",
-  "version": "1.0.0",
-  "description": "JavaScript utility functions for common tasks",
-  "main": "src/index.js",
+  "version": "1.1.0",
+  "description": "Utility functions and shared React components for John Pfeiffer's apps",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.js",
-    "./urlParser": "./src/urlParser.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./urlParser": {
+      "types": "./dist/urlParser.d.ts",
+      "import": "./dist/urlParser.js"
+    },
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "import": "./dist/ui/index.js"
+    }
   },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json --noEmit && vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
     "utilities",
     "helpers",
     "url-parser",
     "javascript",
-    "esm"
+    "esm",
+    "react",
+    "mui",
+    "footer"
   ],
   "author": "John Pfeiffer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/johnutilsjs.git"
+    "url": "git+https://github.com/johnpfeiffer/johnutilsjs.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/johnutilsjs/issues"
+    "url": "https://github.com/johnpfeiffer/johnutilsjs/issues"
   },
-  "homepage": "https://github.com/yourusername/johnutilsjs#readme",
+  "homepage": "https://github.com/johnpfeiffer/johnutilsjs#readme",
+  "peerDependencies": {
+    "@mui/icons-material": ">=9",
+    "@mui/material": ">=9",
+    "react": ">=19"
+  },
+  "peerDependenciesMeta": {
+    "@mui/icons-material": {
+      "optional": true
+    },
+    "@mui/material": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "vitest": "^1.0.0"
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "@mui/icons-material": "9.4.0",
+    "@mui/material": "9.4.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "19.2.18",
+    "jsdom": "^29.1.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   }
 }

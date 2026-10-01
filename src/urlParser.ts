@@ -1,18 +1,24 @@
 // AIDEV-NOTE: Deployment-agnostic URL parsing - works at / or /anyprefix/
 
-export function parseUrl(pathname, validRoutes) {
+export interface ParsedUrl {
+  prefix: string;
+  route: string | null;
+  cleanPath: string;
+}
+
+export function parseUrl(pathname: string, validRoutes: readonly string[]): ParsedUrl {
   const segments = pathname.split('/').filter(Boolean);
   const prefix = detectPrefix(pathname, segments, validRoutes);
 
   const pathWithoutPrefix = prefix ? pathname.slice(prefix.length) : pathname;
   const routeSegments = pathWithoutPrefix.split('/').filter(Boolean);
 
-  let route = null;
+  let route: string | null = null;
   if (routeSegments.length > 0 && validRoutes.includes(routeSegments[0])) {
     route = routeSegments[0];
   }
 
-  let cleanPath;
+  let cleanPath: string;
   if (route) {
     cleanPath = `${prefix}/${route}`;
   } else if (prefix) {
@@ -24,7 +30,7 @@ export function parseUrl(pathname, validRoutes) {
   return { prefix, route, cleanPath };
 }
 
-export function detectPrefix(pathname, segments, validRoutes) {
+export function detectPrefix(pathname: string, segments: readonly string[], validRoutes: readonly string[]): string {
   if (segments.length === 0) {
     return '';
   }
